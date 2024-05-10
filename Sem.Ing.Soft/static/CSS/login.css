@@ -15,7 +15,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: radial-gradient(circle, #d3d3d3, #7a617a);
+  background: linear-gradient(to right, #8A5F5F, #5F477A); 
 }
 
   
@@ -84,16 +84,6 @@ button, .btn {
   padding: .5em;
   text-align:center;
   
-}
-
-.facebook  {
-  color: #ffffff;
-  background-color: #3b5998;
-}
-
-.xing {
-  color: #ffffff;
-  background-color: #026466;
 }
 
 .or {

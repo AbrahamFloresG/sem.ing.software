@@ -10,26 +10,30 @@
     <title>REGISTRO</title>
 
     <!--CSS-->
-    <link rel="stylesheet" href="../static/CSS/registro.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/registro.css') }}">
 </head>
 <body>
+    <!--------------------------------SECCION DE NAVBAR-------------------------------->
     <nav class="navbar navbar-expand-lg navbar-light bd-light fixed-top custom-navbar">
         <div class="container">
-            <a href="#" class="navbar-brand" style="color: white;">Beautiful Salon</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-start" aria-controls="navbar-start"
-            aria-expanded="false" aria-label="Toggle navigation">
+            <a href="{{ url_for('index') }}" class="navbar-brand" style="color: white;">Beautiful Salon</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-start"
+                aria-controls="navbar-start" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar-start">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
+                        <a href="{{ url_for('carrito') }}" class="nav-link" style="color: white;"><i class="bi bi-cart"></i></a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ url_for('index') }}" class="nav-link" style="color: white;">INICIO</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('registro') }}" class="nav-link" style="color: white;">Registro</a>
+                        <a href="{{ url_for('productos') }}" class="nav-link" style="color: white;">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" style="color: white;">Agendar cita</a>
+                        <a href="{{ url_for('cita') }}" class="nav-link" style="color: white;">Agendar cita</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ url_for('login') }}" class="nav-link" style="color: white;">Iniciar sesión</a>
@@ -40,7 +44,6 @@
         </div>
     </nav>
     <!--------------------------------------------------------------------------------->
-
     <div class="wrapper">
         <div class="signup">
             <div class="content">

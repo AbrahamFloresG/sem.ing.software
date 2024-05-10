@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(circle, #d3d3d3, #7a617a);
+    background: linear-gradient(to right, #8A5F5F, #5F477A); 
 }
 
 .signup {
@@ -202,5 +202,8 @@ button,
     z-index: 1000;
 }
 
-
+#registerButton{
+    color: #ffffff;
+    background-image: linear-gradient(-90deg, #4268a7, #aa7382);
+}
 

@@ -36,6 +36,7 @@ def registro():
         except Exception as e:
             return 'Error en el registro: ' + str(e)  # Maneja el error de manera adecuada
 
+
 # Ruta para la página de registro
 @app.route('/registro', methods=['GET'])
 def mostrar_formulario_registro():
@@ -50,6 +51,18 @@ def index():
 @app.route('/login')
 def login():
     return render_template('login.html')
+
+@app.route('/cita')
+def cita():
+    return render_template('cita.html')
+
+@app.route('/carrito')
+def carrito():
+    return render_template('carrito.html')
+
+@app.route('/productos')
+def productos():
+    return render_template('productos.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
