@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inria Sans', sans-serif;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(circle, #d3d3d3, #7a617a);
+}
+
+.signup {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+    background-color: #ffffff;
+    width: 40em;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+    background-image: url("https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2015/10/belleza-chica.jpg?fit=1000%2C664&quality=50&strip=all&ssl=1");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 2em;
+    background-color: #fafafa;
+    width: 35vw;
+}
+
+.signup-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #333333;
+}
+
+.icon-log {
+    font-size: .8em;
+    padding-right: .5em;
+}
+
+.instructions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0 0;
+    font-weight: 400;
+    font-size: 1em;
+    color: #797979;
+}
+
+button,
+.btn {
+    flex: 1 calc(10% - 15px);
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    border-style: none;
+    border-radius: 4px;
+    color: #ffffff;
+    margin: 0.5em 0.5em 0 0;
+    font-size: 1em;
+}
+
+.fab {
+    padding: .5em;
+    text-align: center;
+}
+
+.facebook {
+    color: #ffffff;
+    background-color: #3b5998;
+}
+
+.xing {
+    color: #ffffff;
+    background-color: #026466;
+}
+
+.or {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4em;
+    color: #797979;
+    font-size: 0.8em;
+    margin: 0.5em 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    color: #323232;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.form .miniform {
+    background: none;
+    width: 100%;
+    margin-bottom: .5em;
+    height: 30px;
+    border: 0;
+    border-bottom: 1px solid #ac83de;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.aditional {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+    font-size: 1em;
+}
+
+.password {
+    text-decoration: none;
+    color: black;
+}
+
+.password:hover {
+    color: #ac83de;
+}
+
+.btn-signup {
+    color: #ffffff;
+    background-image: linear-gradient(-90deg, #4268a7, #aa7382);
+}
+
+.signupbutton {
+    background-color: #ffffff;
+    color: #464646;
+    border: 1px solid #bfbdc1;
+}
+
+.tyc {
+    margin-top: 1.5em;
+    font-size: 0.9em;
+    color: #434343;
+}
+
+.link-tyc {
+    text-decoration: none;
+    color: #80c6d8;
+}
+
+.signup-text {
+    margin-top: 1em;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.signup-text a {
+    color: #8a5f5f;
+    text-decoration: none;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+    .signup {
+        width: auto;
+    }
+
+    .content {
+        padding: 2em 2em 0.8em;
+        width: 21em;
+    }
+
+    .btn {
+        height: 5em;
+        flex-direction: column;
+    }
+}
+
+.custom-navbar {
+    background-color: #8a5f5f;
+    background-color: #8a5f5f;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
