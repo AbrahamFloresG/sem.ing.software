@@ -1,3 +1,7 @@
+
+body{
+    background: linear-gradient(to right, #8A5F5F, #5F477A); 
+}
 /*----------------NAVBAR---------------------*/
 .custom-navbar {
     background-color: #8A5F5F;
@@ -6,3 +10,122 @@
     z-index: 1000;
 }
 /*-------------------------------------------*/
+
+/* Estilos para la sección de productos en el carrito */
+.productos-carrito {
+    background-color: whitesmoke; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Estilos para la sección de resumen del carrito */
+.resumen-carrito {
+    background-color: whitesmoke; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Estilos para la sección de productos sugeridos */
+.productos-sugeridos {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 767px) {
+    /* Estilos para pantallas de tamaño chica*/
+    .productos-carrito {
+        padding: 20px;
+    }
+
+    .resumen-carrito {
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    .productos-sugeridos {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Estilos para pantallas de tamaño medio */
+    .productos-carrito {
+        padding: 30px;
+    }
+
+    .resumen-carrito {
+        padding: 30px;
+    }
+
+    .productos-sugeridos {
+        padding: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Estilos para pantallas grandes*/
+    .productos-carrito {
+        padding: 40px;
+    }
+
+    .resumen-carrito {
+        padding: 40px;
+    }
+
+    .productos-sugeridos {
+        padding: 40px;
+    }
+}
+
+
+.custom-price{
+    font-size: 24px;
+    text-align: right;
+}
+
+h2{
+    color: rgb(5, 60, 180);
+    text-align: center;
+}
+
+.productos-carrito h3{
+    color: rgb(5, 60, 180);
+}
+
+.resumen-carrito p{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* CSS adicional para ajustar el tamaño y la forma de las imágenes */
+.productos-carrito img {
+    max-width: 70%;
+    border-radius: 20%; 
+}
+
+.producto hr {
+    border-top: 4px solid #000000; 
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+/* Estilos generales */
+.custom-sugeridos {
+    max-width: 100%;
+}
+
+.btn-primary {
+    background-color:#aa7382;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: green; 
+}
