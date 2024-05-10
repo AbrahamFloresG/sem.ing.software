@@ -1,67 +1,55 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import pyodbc
-import pytest
 
 app = Flask(__name__)
 
-# Conexion a la base de datos
+# Configuración de la base de datos
 server = 'LAPTOP-MM9H9HG1\\SQLEXPRESS'
 database = 's_belleza'
 username = 'soporte'
 password = '123'
 driver = '{ODBC Driver 17 for SQL Server}'
 
-def obtener_datos():
-    try:
-        conn = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
-        cursor = conn.cursor()
+# Función para conectar a la base de datos
+def conectar_bd():
+    return pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
 
-        cursor.execute("SELECT * FROM tu_tabla")  # Reemplaza 'tu_tabla' con el nombre real de tu tabla
-        rows = cursor.fetchall()
-
-        # Transforma los resultados en una lista de diccionarios para facilitar su uso en la plantilla HTML
-        data = [dict(zip([column[0] for column in cursor.description], row)) for row in rows]
-
-        cursor.close()
-        conn.close()
-
-        return data
-    
-    except Exception as e:
-        print('Error al intentar conectarse a la base de datos:', e)
-        return []
-
-@app.route('/')
-def index():
-    datos = obtener_datos()
-    return render_template('index.html', datos=datos)
-
-
-@app.route('/registro')
+# Función para realizar el registro de usuarios
+@app.route('/registro', methods=['POST'])
 def registro():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        apellidos = request.form['apellidos']
+        email = request.form['mail']
+        contrasena = request.form['contrasena']  # Añadido el campo de contraseña
+        telefono = request.form['telefono']
+        direccion = request.form['direccion']
+        
+        try:
+            conn = conectar_bd()
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO tbl_usuario (nombre, apellido, mail, contrasena, telefono, direccion) VALUES (?, ?, ?, ?, ?, ?)", (nombre, apellidos, email, contrasena, telefono, direccion))
+            conn.commit()
+            cursor.close()
+            conn.close()
+            return 'Registro exitoso'  # O puedes redirigir a otra página de éxito
+        except Exception as e:
+            return 'Error en el registro: ' + str(e)  # Maneja el error de manera adecuada
+
+# Ruta para la página de registro
+@app.route('/registro', methods=['GET'])
+def mostrar_formulario_registro():
     return render_template('registro.html')
 
+# Ruta para la página de inicio
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# Ruta para la página de inicio de sesión
 @app.route('/login')
 def login():
     return render_template('login.html')
 
-# Pruebas unitarias
-@pytest.fixture
-def client():
-    app.config['TESTING'] = True
-    with app.test_client() as client:
-        yield client
-
-#prueva ruta principal que responda correctamente. Se realiza una solicitud HTTP
-def test_index(client):
-    response = client.get('/')
-    assert response.status_code == 200
-
-#prueva de la funcion de obtener datos, verifica que la lista de datos no este vacia
-def test_obtener_datos():
-    data = obtener_datos()
-    assert len(data) > 0
-
 if __name__ == '__main__':
     app.run(debug=True)
-
